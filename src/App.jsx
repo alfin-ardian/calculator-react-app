@@ -168,7 +168,6 @@ const App = () => {
                   {totalPeople < 1 && totalPeople ? "can't be zero" : ""}
                 </p>
               </div>
-              {console.log(totalPeople, "totalPeople")}
               <Input
                 type="number"
                 prefix={
