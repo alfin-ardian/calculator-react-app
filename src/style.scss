@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import "./breakpoints/breakpoints.scss";
+
+$primary-color: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+body {
+  font-family: "Space Mono", monospace !important;
+  background-color: $light-grayish-cyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-family: "Space Mono" !important;
+  font-size: large;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  background-color: $very-light-grayish-cyan;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.app-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  width: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 25px;
+
+  .row {
+    margin-top: 10px;
+  }
+
+  .select {
+    color: $white;
+  }
+
+  p {
+    text-align: left;
+    margin: 0;
+    color: grey;
+    font-weight: 700;
+  }
+
+  input[type="number"] {
+    text-align: right;
+  }
+  .ant-input {
+    font-size: 16px !important;
+    color: $very-dark-cyan;
+    font-weight: 700;
+  }
+  button {
+    background-color: $very-dark-cyan;
+    height: 50px;
+    margin: 5px;
+    color: $white;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $very-dark-cyan;
+    }
+  }
+  .active {
+    background-color: $primary-color;
+  }
+}
+
+.right {
+  width: 300px;
+  padding: 20px 20px;
+  margin: 20px 20px;
+  background-color: $very-dark-cyan;
+  border-radius: 10px;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bill {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .bill p {
+    margin: 0;
+  }
+
+  .white {
+    color: $white;
+    text-align: left;
+  }
+
+  .person {
+    color: gray;
+  }
+
+  .result {
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-right: 20px;
+  }
+}
+
+@include media(">phone") {
+  .left {
+    button {
+      width: 90px;
+    }
+  }
+  .right {
+    .button-reset {
+      width: 100%;
+      height: 40px;
+      background-color: $primary-color;
+      color: $very-dark-cyan;
+      margin-bottom: 10px;
+    }
+  }
+}
+@include media("<=phone") {
+  .app {
+    width: 100%;
+  }
+  .app-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .select button {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 130px;
+  }
+
+  .select button:last-child {
+    margin-right: 0;
+  }
+
+  .left {
+    .button {
+      width: 10px;
+    }
+    .ant-input {
+      width: 2000px;
+    }
+
+    .custom-mobile {
+      width: 300px;
+    }
+  }
+
+  .right {
+    .button-reset {
+      width: 100%;
+      height: 40px;
+      background-color: $primary-color;
+      color: $very-dark-cyan;
+      margin-bottom: 10px;
+      box-shadow: none;
+    }
+  }
+}
